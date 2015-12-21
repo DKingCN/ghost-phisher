@@ -537,7 +537,7 @@ class Ghost_phisher(QtGui.QMainWindow,Ui_ghost_phisher):    # Main class for all
         if attempt_monitor[0] == 0:
             if 'monitor mode vif enabled' in attempt_monitor[1]:
                 for iterate in os.listdir('/sys/class/net'):
-                    if iterate.startswith('mon'):
+                    if iterate.endswith('mon'):
                         mon_string += iterate
                         break
                 if mon_string == '':
