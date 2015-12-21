@@ -535,7 +535,7 @@ class Ghost_phisher(QtGui.QMainWindow,Ui_ghost_phisher):    # Main class for all
         attempt_monitor = commands.getstatusoutput("airmon-ng start %s"%(selected_card))
         mon_string = ''
         if attempt_monitor[0] == 0:
-            if 'monitor mode enabled' in attempt_monitor[1]:
+            if 'monitor mode vif enabled' in attempt_monitor[1]:
                 for iterate in os.listdir('/sys/class/net'):
                     if iterate.startswith('mon'):
                         mon_string += iterate
